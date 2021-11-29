@@ -107,6 +107,15 @@ jobs:
           source: "docker-compose.yml"
           target: "./"
 
+      - name: Copy folder content recursively to remote
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: php/src
+          remote: ./
+          host: ${{env.INSTANCE_IP}}
+          username: opc
+          privateKey: ${{secrets.OCI_KEY_FILE}}
+
       - name: 'Running Docker Compose'
         uses: appleboy/ssh-action@master
         with:
