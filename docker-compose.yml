@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   php-apache-environment:
-    image: nadzul/kuis2
+    image: nadzul/tugas-cicd
     container_name: php-apache
     depends_on:
       - db
