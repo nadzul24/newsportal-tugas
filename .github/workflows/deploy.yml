@@ -16,6 +16,11 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@v2
 
+      - name: 'Build the Docker image'
+        uses: actions/checkout@v2
+        run: ddocker build -t ${{ secrets.DOCKERHUB_USERNAME }}/tugas-cicd .
+        working-directory: ./php
+
       - name: 'Login to Dockerhub'
         uses: docker/login-action@v1
         with:
