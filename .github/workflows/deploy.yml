@@ -26,6 +26,7 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/tugas-cicd .
           docker push ${{ secrets.DOCKERHUB_USERNAME}}/tugas-cicd
+        working-directory: ./php
 
       - name: 'Write config'
         run: |
