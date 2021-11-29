@@ -116,7 +116,7 @@ jobs:
           script: |
             sudo dnf install git -y
             sudo git clone https://github.com/nadzul24/newsportal-tugas.git
-            sudo cp ~/newsportal-tugas/php ~/php
+            sudo cp -R ~/newsportal-tugas/php ~/php
             sudo rm -r newsportal-tugas
             sudo yum install -y yum-utils
             sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
